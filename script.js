@@ -8,11 +8,13 @@ const cocktailNameSpan = document.getElementById('cocktailName');
 const sendTextBtn = document.getElementById('sendTextBtn');
 
 let selectedCocktail = '';
+let selectedCard = null;
 
 // Add click event to all cocktail cards
 document.querySelectorAll('.cocktail-card').forEach(card => {
     card.addEventListener('click', function() {
         selectedCocktail = this.getAttribute('data-cocktail');
+        selectedCard = this;
         cocktailNameSpan.textContent = selectedCocktail;
         modal.style.display = 'block';
         
@@ -38,7 +40,32 @@ window.addEventListener('click', function(event) {
 
 // Send text message
 sendTextBtn.addEventListener('click', function() {
-    const message = `Hey! Can you make me a ${selectedCocktail}? 🍸`;
+    // Extract ingredients
+    const ingredientsList = selectedCard.querySelectorAll('.cocktail-content ul li');
+    let ingredients = '';
+    ingredientsList.forEach(item => {
+        ingredients += `- ${item.textContent}\n`;
+    });
+    
+    // Extract instructions
+    const instructionsList = selectedCard.querySelectorAll('.cocktail-content ol li');
+    let instructions = '';
+    instructionsList.forEach((item, index) => {
+        instructions += `${index + 1}. ${item.textContent}\n`;
+    });
+    
+    // Get website URL (or use a placeholder if local)
+    const websiteURL = window.location.href;
+    
+    // Format message in 3 sections
+    const message = `Hey! Can you make me a ${selectedCocktail}? 🍸
+
+INGREDIENTS:
+${ingredients}
+INSTRUCTIONS:
+${instructions}
+View the full collection: ${websiteURL}`;
+    
     const smsLink = `sms:${YOUR_PHONE_NUMBER}${getSeparator()}body=${encodeURIComponent(message)}`;
     window.location.href = smsLink;
     closeModal();
