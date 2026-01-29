@@ -7,6 +7,15 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Modal for requesting cocktail -->
+    <div id="requestModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Request a Cocktail 🍸</h2>
+            <p class="modal-message">Want me to make you a <span id="cocktailName"></span>?</p>
+            <button id="sendTextBtn" class="send-btn">Send Text Request</button>
+        </div>
+    </div>
     <div class="hero">
         <div class="hero-content">
             <h1>Our Cocktail Collection</h1>
@@ -21,7 +30,7 @@
 
         <div class="cocktails-grid">
             <!-- Cocktail 1: Margarita -->
-            <div class="cocktail-card">
+            <div class="cocktail-card" data-cocktail="Margarita">
                 <div class="cocktail-header">
                     <h2>Margarita</h2>
                     <span class="cocktail-emoji">🍹</span>
@@ -48,7 +57,7 @@
             </div>
 
             <!-- Cocktail 2: Mojito -->
-            <div class="cocktail-card">
+            <div class="cocktail-card" data-cocktail="Mojito">
                 <div class="cocktail-header">
                     <h2>Mojito</h2>
                     <span class="cocktail-emoji">🌿</span>
@@ -74,35 +83,8 @@
                 </div>
             </div>
 
-            <!-- Cocktail 3: Old Fashioned -->
-            <div class="cocktail-card">
-                <div class="cocktail-header">
-                    <h2>Old Fashioned</h2>
-                    <span class="cocktail-emoji">🥃</span>
-                </div>
-                <div class="difficulty">Difficulty: Medium</div>
-                <div class="cocktail-content">
-                    <h3>Ingredients:</h3>
-                    <ul>
-                        <li>2 oz Bourbon or Rye whiskey</li>
-                        <li>1 Sugar cube</li>
-                        <li>2-3 dashes Angostura bitters</li>
-                        <li>Orange peel</li>
-                        <li>Luxardo cherry (optional)</li>
-                    </ul>
-                    <h3>Instructions:</h3>
-                    <ol>
-                        <li>Muddle sugar cube with bitters and a splash of water</li>
-                        <li>Add whiskey and stir</li>
-                        <li>Add large ice cube</li>
-                        <li>Express orange peel oils over drink and drop in glass</li>
-                        <li>Garnish with cherry if desired</li>
-                    </ol>
-                </div>
-            </div>
-
-            <!-- Cocktail 4: Manhattan -->
-            <div class="cocktail-card">
+            <!-- Cocktail 3: Manhattan -->
+            <div class="cocktail-card" data-cocktail="Manhattan">
                 <div class="cocktail-header">
                     <h2>Manhattan</h2>
                     <span class="cocktail-emoji">🍷</span>
@@ -127,7 +109,7 @@
             </div>
 
             <!-- Cocktail 5: Classic Martini -->
-            <div class="cocktail-card">
+            <div class="cocktail-card" data-cocktail="Classic Martini">
                 <div class="cocktail-header">
                     <h2>Classic Martini</h2>
                     <span class="cocktail-emoji">🍸</span>
@@ -152,7 +134,7 @@
             </div>
 
             <!-- Cocktail 6: Negroni -->
-            <div class="cocktail-card">
+            <div class="cocktail-card" data-cocktail="Negroni">
                 <div class="cocktail-header">
                     <h2>Negroni</h2>
                     <span class="cocktail-emoji">🔴</span>
@@ -178,7 +160,7 @@
             </div>
 
             <!-- Cocktail 7: Whiskey Sour -->
-            <div class="cocktail-card">
+            <div class="cocktail-card" data-cocktail="Whiskey Sour">
                 <div class="cocktail-header">
                     <h2>Whiskey Sour</h2>
                     <span class="cocktail-emoji">🍋</span>
@@ -205,7 +187,7 @@
             </div>
 
             <!-- Cocktail 8: Daiquiri -->
-            <div class="cocktail-card">
+            <div class="cocktail-card" data-cocktail="Daiquiri">
                 <div class="cocktail-header">
                     <h2>Daiquiri</h2>
                     <span class="cocktail-emoji">🍋‍🟩</span>
@@ -230,7 +212,7 @@
             </div>
 
             <!-- Cocktail 9: Cosmopolitan -->
-            <div class="cocktail-card">
+            <div class="cocktail-card" data-cocktail="Cosmopolitan">
                 <div class="cocktail-header">
                     <h2>Cosmopolitan</h2>
                     <span class="cocktail-emoji">💗</span>
@@ -256,7 +238,7 @@
             </div>
 
             <!-- Cocktail 10: Espresso Martini -->
-            <div class="cocktail-card">
+            <div class="cocktail-card" data-cocktail="Espresso Martini">
                 <div class="cocktail-header">
                     <h2>Espresso Martini</h2>
                     <span class="cocktail-emoji">☕</span>
@@ -287,5 +269,7 @@
             <p class="footer-note">Always drink responsibly and enjoy!</p>
         </footer>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
