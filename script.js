@@ -16,6 +16,9 @@ document.querySelectorAll('.cocktail-card').forEach(card => {
         cocktailNameSpan.textContent = selectedCocktail;
         modal.style.display = 'block';
         
+        // Prevent body scroll on mobile when modal is open
+        document.body.style.overflow = 'hidden';
+        
         // Add animation class
         modal.querySelector('.modal-content').classList.add('modal-enter');
     });
@@ -44,6 +47,10 @@ sendTextBtn.addEventListener('click', function() {
 // Function to close modal with animation
 function closeModal() {
     modal.querySelector('.modal-content').classList.remove('modal-enter');
+    
+    // Re-enable body scroll
+    document.body.style.overflow = '';
+    
     setTimeout(() => {
         modal.style.display = 'none';
     }, 300);

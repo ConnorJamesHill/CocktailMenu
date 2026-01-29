@@ -222,28 +222,175 @@ footer p {
 
     .cocktails-grid {
         grid-template-columns: 1fr;
+        gap: 25px;
     }
 
     .cocktail-header h2 {
         font-size: 1.7rem;
+    }
+
+    .intro-message {
+        font-size: 1.1rem;
+        margin-bottom: 40px;
+        padding: 0 10px;
+    }
+
+    .modal-content {
+        margin: 15% auto;
+        padding: 35px 25px;
+        width: 85%;
+    }
+
+    .modal-content h2 {
+        font-size: 1.7rem;
+    }
+
+    .modal-message {
+        font-size: 1.1rem;
+    }
+
+    .send-btn {
+        padding: 14px 35px;
+        font-size: 1rem;
     }
 }
 
 @media (max-width: 480px) {
     .hero h1 {
         font-size: 2rem;
+        letter-spacing: 1px;
     }
 
     .hero {
-        padding: 60px 20px;
+        padding: 50px 15px;
+    }
+
+    .subtitle {
+        font-size: 1rem;
     }
 
     .cocktail-card {
-        padding: 20px;
+        padding: 25px 20px;
     }
 
     .container {
         padding: 30px 15px;
+    }
+
+    .cocktail-header {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .cocktail-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .cocktail-emoji {
+        font-size: 2rem;
+    }
+
+    .cocktail-content h3 {
+        font-size: 1.1rem;
+        margin-top: 15px;
+    }
+
+    .cocktail-content ul li,
+    .cocktail-content ol li {
+        font-size: 0.95rem;
+        padding: 7px 0;
+        padding-left: 25px;
+    }
+
+    .cocktail-content ol li {
+        padding-left: 30px;
+    }
+
+    .intro-message {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+
+    .modal-content {
+        margin: 20% auto;
+        padding: 30px 20px;
+        width: 90%;
+        max-width: 340px;
+    }
+
+    .modal-content h2 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+
+    .modal-message {
+        font-size: 1rem;
+        margin-bottom: 25px;
+    }
+
+    .modal-message #cocktailName {
+        font-size: 1.1rem;
+        display: block;
+        margin: 5px 0;
+    }
+
+    .send-btn {
+        padding: 12px 30px;
+        font-size: 0.95rem;
+        width: 100%;
+    }
+
+    .close {
+        right: 15px;
+        top: 10px;
+        font-size: 30px;
+    }
+
+    footer p {
+        font-size: 1rem;
+    }
+
+    .footer-note {
+        font-size: 0.9rem !important;
+    }
+
+    .difficulty {
+        font-size: 0.8rem;
+        padding: 4px 12px;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 360px) {
+    .hero h1 {
+        font-size: 1.7rem;
+    }
+
+    .cocktail-card {
+        padding: 20px 15px;
+    }
+
+    .modal-content {
+        padding: 25px 15px;
+    }
+}
+
+/* Improve touch targets for mobile */
+@media (hover: none) and (pointer: coarse) {
+    .cocktail-card {
+        -webkit-tap-highlight-color: rgba(201, 75, 75, 0.3);
+    }
+
+    .send-btn {
+        min-height: 48px;
+    }
+
+    .close {
+        min-width: 44px;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
 
